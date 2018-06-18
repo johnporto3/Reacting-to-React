@@ -18,8 +18,8 @@ class Greeting extends React.Component {
         }
     }
 
-onInputChange = (value) => {
-    this.setState({ name: value });
+handleInputChange = (value) => {
+    this.setState({ text: value });
 }
 
 
@@ -29,8 +29,10 @@ onInputChange = (value) => {
                 <h1>{this.props.message}</h1>
                 <input placeholder="What's your hamster's name?"
                 value={ this.state.text }
-                onChange={ (event) => this.onInputChange(event.target.value) }
-                />             
+                onChange={ (event) => this.handleInputChange(event.target.value) }
+                />
+                <br/>
+                <button onClick={ this.state.hasLoaded }> Click Me!</button>             
             </div>
 
         );
