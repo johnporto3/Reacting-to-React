@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 
 
 class Greeting extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -18,25 +18,29 @@ class Greeting extends React.Component {
         }
     }
 
-handleInputChange = (value) => {
-    this.setState({ text: value });
-}
+    handleInputChange = (value) => {
+        this.setState({ text: value });
+    }
+
+    handleClick(){
+        this.setState({text: hasLoaded});
+    }
 
 
     render() {
         return (
             <div>
                 <h1>{this.props.message}</h1>
-                <input placeholder="What's your hamster's name?"
-                value={ this.state.text }
-                onChange={ (event) => this.handleInputChange(event.target.value) }
+                <input type="text" 
+                    value={this.state.text}
+                    onChange={(event) => this.handleInputChange(event.target.value)}
                 />
-                <br/>
-                <button onClick={ this.state.hasLoaded }> Click Me!</button>             
+                <br />
+                <button onClick= {this.handleClick} >Click Me!</button>
             </div>
 
         );
-    }
-}
-    
+    };
+};
+
 export default Greeting;
